@@ -2,31 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Captioned Responsive Image Gallery</title>
   <style>
-    /* TODO 1: Use the grid-template-columns property plus the repeat and minmax functions and the keyword auto-fit to set up your grid */
+	* {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
       padding: 15px;
+	  gap: 1rem;
 	}
-    /* TODO 2: For your minmax ( ) function, set a floor (minimum) width in pixels and a ceiling (maximum) width of 1fr */
-    
-    /* TODO 3: Set a small gap for your image gallery 
-
-    /* Prevents images from overflowing their respective grid cells */
     .gallery img {
       width: 100%;
       height: 100%;
 	  object-fit: cover;
 	 }
-   /* TODO 4: Set an image height -- in pixels -- so each image has a clean, uniform look */
-	
-   /* TODO 5: Use CSS object-fit property so your images don't look squished or distorted */
+	:root {
+	  fontsize: 16px;
+	}
+	body {
+		max-width: 95%;
+		margin: 5px auto;
+	}
+	.gallery-title {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.image { 
+		dispaly: grid;
+		grid-template-rows: 1fr auto;
+	}
+	figcaption {
+		text-align: center;
+		margin: 5px 0 0 0;
+		font-size: 0.9rem;
+		font-weight: bold;
+		color: #333;
+		background-color: lightgrey;
+		border: 2px solid black;
+		padding: 0.25rem;
+	}
   </style>
 </head>
 <body>
 <!-- TODO 6: Add a DIV with a class of container -->
+  <div class="gallery-title">
+	  <h1>Basic Image Gallery</h1>
+  </div>
   <div class="container">
   	<!-- Image plus its caption -->
 	  <figure>
